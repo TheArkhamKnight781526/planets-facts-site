@@ -1,0 +1,25 @@
+@import "_variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+  max-width: 100%;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include body;
+  background: $dark-blue url("/assets/background-stars.svg");
+  background-size: cover;
+}

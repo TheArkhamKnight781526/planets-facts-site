@@ -1,0 +1,16 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  {{ $general := resources.Get "SCSS/general.scss" }} {{ $generalstyles := $general | resources.ToCSS }}
+  {{ $header := resources.Get "SCSS/header.scss" }} {{ $headerstyles := $header | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $generalstyles.Permalink }}">
+  <link rel="stylesheet" href="{{ $headerstyles.Permalink }}">
+  <title>{{ .Title }}</title>
+</head>
