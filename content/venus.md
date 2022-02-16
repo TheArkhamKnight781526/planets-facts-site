@@ -29,4 +29,5 @@ images:
   planet: "/assets/planet-venus.svg"
   internal: "/assets/planet-venus-internal.svg"
   geology: "/assets/geology-venus.png"
+sizes: [154, 253, 400]
 ---

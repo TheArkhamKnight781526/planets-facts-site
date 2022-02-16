@@ -28,4 +28,5 @@ images:
   planet: "/assets/planet-uranus.svg"
   internal: "/assets/planet-uranus-internal.svg"
   geology: "/assets/geology-uranus.png"
+sizes: [176, 290, 458]
 ---

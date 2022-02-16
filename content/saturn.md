@@ -29,4 +29,5 @@ images:
   planet: "/assets/planet-saturn.svg"
   internal: "/assets/planet-saturn-internal.svg"
   geology: "/assets/geology-saturn.png"
+sizes: [256, 422, 665]
 ---

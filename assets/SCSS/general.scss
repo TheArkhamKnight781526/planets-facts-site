@@ -19,7 +19,34 @@ body {
 }
 
 body {
+  width: 100vw;
+  min-width: $mobile;
   @include body;
   background: $dark-blue url("/assets/background-stars.svg");
   background-size: cover;
+
+  &[planet="Earth"] {
+    --accent: #{$purple};
+  }
+  &[planet="Jupiter"] {
+    --accent: #{$red};
+  }
+  &[planet="Mars"] {
+    --accent: #{$reddish-orange};
+  }
+  &[planet="Mercury"] {
+    --accent: #{$cyan};
+  }
+  &[planet="Neptune"] {
+    --accent: #{$sky-blue};
+  }
+  &[planet="Saturn"] {
+    --accent: #{$dark-orange};
+  }
+  &[planet="Uranus"] {
+    --accent: #{$mint-green};
+  }
+  &[planet="Venus"] {
+    --accent: #{$light-orange};
+  }
 }

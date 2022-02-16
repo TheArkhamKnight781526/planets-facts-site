@@ -29,4 +29,5 @@ images:
   planet: "/assets/planet-earth.svg"
   internal: "/assets/planet-earth-internal.svg"
   geology: "/assets/geology-earth.png"
+sizes: [173, 285, 450]
 ---

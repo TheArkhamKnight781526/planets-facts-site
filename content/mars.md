@@ -28,4 +28,5 @@ images:
   planet: "/assets/planet-mars.svg"
   internal: "/assets/planet-mars-internal.svg"
   geology: "/assets/geology-mars.png"
+sizes: [129, 213, 336]
 ---

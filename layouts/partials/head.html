@@ -4,13 +4,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="/assets/planet-earth.svg" type="image/x-icon">
   <link
     href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap"
     rel="stylesheet"
   />
   {{ $general := resources.Get "SCSS/general.scss" }} {{ $generalstyles := $general | resources.ToCSS }}
   {{ $header := resources.Get "SCSS/header.scss" }} {{ $headerstyles := $header | resources.ToCSS }}
+  {{ $index := resources.Get "SCSS/index.scss" }} {{ $indexstyles := $index | resources.ToCSS }}
   <link rel="stylesheet" href="{{ $generalstyles.Permalink }}">
   <link rel="stylesheet" href="{{ $headerstyles.Permalink }}">
-  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="{{ $indexstyles.Permalink }}">
+  <title>Planet Fact Site - {{ .Params.name }}</title>
 </head>

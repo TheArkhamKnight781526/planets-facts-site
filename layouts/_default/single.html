@@ -1,4 +1,101 @@
 {{ partial "head.html" . }}
-<body>
+<body planet="{{ .Params.name }}">
+    <style>
+        #planet .planet-image {
+            width: {{ index .Params.sizes 0 }}px;
+        }
+
+        @media screen and (min-width: 768px) {
+            #planet .planet-image {
+                width: {{ index .Params.sizes 1 }}px;
+            }   
+        }
+
+        @media screen and (min-width: 1440px) {
+            #planet .planet-image {
+                width: {{ index .Params.sizes 2 }}px;
+            }   
+        }
+    </style>
     {{ partial "header.html" . }}
+
+    {{ with .Params }}
+    <main id="content">
+        <div id="toggles">
+            <button id="overview" class="active"><span>01</span>Overview</button>
+            <button id="structure"><span>02</span>Structure</button>
+            <button id="geology"><span>03</span>Surface</button>
+        </div>
+        <div id="planet">
+            <img src="{{ .images.planet }}" alt="Image of {{ .name }}" class="planet-image" />
+            <img src="{{ .images.geology }}" alt="" class="overlay" />
+        </div>
+        <div id="text">
+            <h1>{{ .name }}</h1>
+            <p>{{ .overview.content }}</p>
+            <div id="source">
+                <span>Source : <a href="{{ .overview.source }}" target="_blank"><b>Wikipedia</b><img src="/assets/icon-source.svg" alt="Source Icon"></a></span>
+            </div>
+        </div>
+        <div id="stats">
+            <div class="stat">
+                <h2 class="stat-heading">Rotation Time</h2>
+                <span class="stat-figure">{{ .rotation }}</span>
+            </div>
+            <div class="stat">
+                <h2 class="stat-heading">Revolution Time</h2>
+                <span class="stat-figure">{{ .revolution }}</span>
+            </div>
+            <div class="stat">
+                <h2 class="stat-heading">Radius</h2>
+                <span class="stat-figure">{{ .radius }}</span>
+            </div>
+            <div class="stat">
+                <h2 class="stat-heading">Average Temp.</h2>
+                <span class="stat-figure">{{ .temperature }}</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    const content = document.querySelector("#text p");
+    const source = document.querySelector("#text #source a");
+    const planet = document.querySelector("#planet");
+    const planetImage = document.querySelector("#planet img");
+    const overview = document.querySelector("#toggles button#overview");
+    const structure = document.querySelector("#toggles button#structure");
+    const geology = document.querySelector("#toggles button#geology");
+
+    overview.addEventListener('click', () => {
+        document.querySelectorAll("#toggles button").forEach(toggle => toggle.classList.remove('active'));
+        overview.classList.add('active');
+        content.innerHTML = {{ .overview.content }}
+        source.href = {{ .overview.source }}
+        planetImage.src = {{ .images.planet }}
+        planet.classList.remove("enable-overlay");
+    })
+
+    structure.addEventListener('click', () => {
+        document.querySelectorAll("#toggles button").forEach(toggle => toggle.classList.remove('active'));
+        structure.classList.add('active');
+        content.innerHTML = {{ .structure.content }}
+        source.href = {{ .structure.source }}
+        planetImage.src = {{ .images.internal }}
+        planet.classList.remove("enable-overlay");
+    })
+
+    geology.addEventListener('click', () => {
+        document.querySelectorAll("#toggles button").forEach(toggle => toggle.classList.remove('active'));
+        geology.classList.add('active');
+        content.innerHTML = {{ .geology.content }}
+        source.href = {{ .geology.source }}
+        planetImage.src = {{ .images.planet }}
+        planet.classList.add("enable-overlay");
+    })
+</script>
+
+    {{ $ts := resources.Get "TS/switcher.ts" | js.Build }}
+    <script src="{{ $ts.Permalink }}"></script>
+
+    {{ end }}
 </body>

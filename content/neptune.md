@@ -28,4 +28,5 @@ images:
   planet: "/assets/planet-neptune.svg"
   internal: "/assets/planet-neptune-internal.svg"
   geology: "/assets/geology-neptune.png"
+sizes: [173, 285, 450]
 ---

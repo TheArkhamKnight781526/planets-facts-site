@@ -1,3 +1,50 @@
 <header>
-    <span id="logo">THE PLANETS</span>
+    <h1 id="logo">THE PLANETS</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" id="hamburger" onclick="this.parentNode.classList.toggle('show-links')">
+        <g fill-rule="evenodd">
+            <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z"/>
+        </g>
+    </svg>
+    <div id="links">
+        <a class="link {{ if eq .Params.name "Mercury" }} active{{ end }}" id="mercury" href="/mercury">
+            <div class="ball"></div>
+            <span>Mercury</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Venus" }} active{{ end }}" id="venus" href="/venus">
+            <div class="ball"></div>
+            <span>Venus</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Earth" }} active{{ end }}" id="earth" href="/earth">
+            <div class="ball"></div>
+            <span>Earth</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Mars" }} active{{ end }}" id="mars" href="/mars">
+            <div class="ball"></div>
+            <span>Mars</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Jupiter" }} active{{ end }}" id="jupiter" href="/jupiter">
+            <div class="ball"></div>
+            <span>Jupiter</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Saturn" }} active{{ end }}" id="saturn" href="/saturn">
+            <div class="ball"></div>
+            <span>Saturn</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Uranus" }} active{{ end }}" id="uranus" href="/uranus">
+            <div class="ball"></div>
+            <span>Uranus</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+        <a class="link {{ if eq .Params.name "Neptune" }} active{{ end }}" id="neptune" href="/neptune">
+            <div class="ball"></div>
+            <span>Neptune</span>
+            <img src="/assets/icon-chevron.svg" alt="Chevron" class="chevron" />
+        </a>
+    </div>
 </header>

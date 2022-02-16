@@ -27,4 +27,5 @@ images:
   planet: "/assets/planet-jupiter.svg"
   internal: "/assets/planet-jupiter-internal.svg"
   geology: "/assets/geology-jupiter.png"
+sizes: [224, 369, 582]
 ---

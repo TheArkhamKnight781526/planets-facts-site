@@ -29,4 +29,5 @@ images:
   planet: "/assets/planet-mercury.svg"
   internal: "/assets/planet-mercury-internal.svg"
   geology: "/assets/geology-mercury.png"
+sizes: [111, 184, 290]
 ---
